@@ -2,27 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>patchouli的博客</title>
-        <link>http://localhost:1313/</link>
+        <link>https://patchouli.blog/</link>
         <description>Recent content on patchouli的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>patchouli</copyright>
-        <lastBuildDate>Sat, 09 Nov 2024 01:35:05 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>First</title>
-        <link>http://localhost:1313/p/first/</link>
-        <pubDate>Sat, 09 Nov 2024 01:35:05 +0800</pubDate>
-        
-        <guid>http://localhost:1313/p/first/</guid>
-        <description>&lt;h1&gt;这里是标题&lt;/h1&gt;</description>
-        </item>
-        <item>
-        <title>Test</title>
-        <link>http://localhost:1313/p/test/</link>
-        <pubDate>Fri, 08 Nov 2024 23:03:41 +0800</pubDate>
-        
-        <guid>http://localhost:1313/p/test/</guid>
-        <description></description>
-        </item>
-        
+        <lastBuildDate></lastBuildDate><atom:link href="https://patchouli.blog/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>
