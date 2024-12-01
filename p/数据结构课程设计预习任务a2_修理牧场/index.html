@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="最少锯木花费问题\r【题目描述】PTA(数据结构与算法题目集7-29)\r农夫要修理牧场的一段栅栏，他测量了栅栏，发现需要N块木头，每块木头长度为整数Li个长度单位，于是他购买了一条很长的、能锯成N块的木头，即该木头的长度是Li的总和。 但是农夫自己没有锯子，请人锯木的酬金跟这段木头的长度成正比。为简单起见，不妨就设酬金等于所锯木头的长度。例如，要将长度为20的木头锯成长度为8、7和5的三段，第一次锯木头花费20，将木头锯成12和8；第二次锯木头花费12，将长度为12的木头锯成7和5，总花费为32。如果第一次将木头锯成15和5，则第二次锯木头花费15，总花费为35（大于32）。 请编写程序帮助农夫计算将木头锯成N块的最少花费。\n">
 <title>数据结构课程设计预习任务A2_修理牧场</title>
 
 <link rel='canonical' href='https://patchouli.blog/p/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E9%A2%84%E4%B9%A0%E4%BB%BB%E5%8A%A1a2_%E4%BF%AE%E7%90%86%E7%89%A7%E5%9C%BA/'>
 
 <link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="数据结构课程设计预习任务A2_修理牧场">
-<meta property='og:description' content="">
+<meta property='og:description' content="最少锯木花费问题\r【题目描述】PTA(数据结构与算法题目集7-29)\r农夫要修理牧场的一段栅栏，他测量了栅栏，发现需要N块木头，每块木头长度为整数Li个长度单位，于是他购买了一条很长的、能锯成N块的木头，即该木头的长度是Li的总和。 但是农夫自己没有锯子，请人锯木的酬金跟这段木头的长度成正比。为简单起见，不妨就设酬金等于所锯木头的长度。例如，要将长度为20的木头锯成长度为8、7和5的三段，第一次锯木头花费20，将木头锯成12和8；第二次锯木头花费12，将长度为12的木头锯成7和5，总花费为32。如果第一次将木头锯成15和5，则第二次锯木头花费15，总花费为35（大于32）。 请编写程序帮助农夫计算将木头锯成N块的最少花费。\n">
 <meta property='og:url' content='https://patchouli.blog/p/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E9%A2%84%E4%B9%A0%E4%BB%BB%E5%8A%A1a2_%E4%BF%AE%E7%90%86%E7%89%A7%E5%9C%BA/'>
 <meta property='og:site_name' content='patchouli的博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-12-01T09:53:30&#43;08:00'/><meta property='article:modified_time' content='2024-12-01T09:53:30&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-11-20T09:53:30&#43;08:00'/><meta property='article:modified_time' content='2024-11-20T09:53:30&#43;08:00'/>
 <meta name="twitter:title" content="数据结构课程设计预习任务A2_修理牧场">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="最少锯木花费问题\r【题目描述】PTA(数据结构与算法题目集7-29)\r农夫要修理牧场的一段栅栏，他测量了栅栏，发现需要N块木头，每块木头长度为整数Li个长度单位，于是他购买了一条很长的、能锯成N块的木头，即该木头的长度是Li的总和。 但是农夫自己没有锯子，请人锯木的酬金跟这段木头的长度成正比。为简单起见，不妨就设酬金等于所锯木头的长度。例如，要将长度为20的木头锯成长度为8、7和5的三段，第一次锯木头花费20，将木头锯成12和8；第二次锯木头花费12，将长度为12的木头锯成7和5，总花费为32。如果第一次将木头锯成15和5，则第二次锯木头花费15，总花费为35（大于32）。 请编写程序帮助农夫计算将木头锯成N块的最少花费。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -173,7 +173,50 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#题目描述pta数据结构与算法题目集7-29">【题目描述】PTA(数据结构与算法题目集7-29)</a></li>
+    <li><a href="#输入格式">【输入格式】</a></li>
+    <li><a href="#输出格式">【输出格式】</a></li>
+    <li><a href="#heading"></a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#问题分析">问题分析</a>
+      <ol>
+        <li><a href="#哈夫曼树原理">哈夫曼树原理</a></li>
+      </ol>
+    </li>
+    <li><a href="#算法流程">算法流程</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -206,7 +249,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Dec 01, 2024</time>
+                <time class="article-time--published">Nov 20, 2024</time>
             </div>
         
 
@@ -221,7 +264,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 0 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
@@ -236,7 +279,30 @@
     <section class="article-content">
     
     
-    
+    <h1 id="最少锯木花费问题">最少锯木花费问题
+</h1><h2 id="题目描述pta数据结构与算法题目集7-29">【题目描述】PTA(数据结构与算法题目集7-29)
+</h2><p>农夫要修理牧场的一段栅栏，他测量了栅栏，发现需要N块木头，每块木头长度为整数Li个长度单位，于是他购买了一条很长的、能锯成N块的木头，即该木头的长度是Li的总和。
+但是农夫自己没有锯子，请人锯木的酬金跟这段木头的长度成正比。为简单起见，不妨就设酬金等于所锯木头的长度。例如，要将长度为20的木头锯成长度为8、7和5的三段，第一次锯木头花费20，将木头锯成12和8；第二次锯木头花费12，将长度为12的木头锯成7和5，总花费为32。如果第一次将木头锯成15和5，则第二次锯木头花费15，总花费为35（大于32）。
+请编写程序帮助农夫计算将木头锯成N块的最少花费。</p>
+<h2 id="输入格式">【输入格式】
+</h2><p>输入首先给出正整数N（≤10^4），表示要将木头锯成N块。第二行给出N个正整数（≤50），表示每段木块的长度。</p>
+<h2 id="输出格式">【输出格式】
+</h2><p>输出1个整数，即将木头锯成N块的最少花费。</p>
+<h2 id="heading">
+</h2><h1 id="解答">解答
+</h1><h2 id="问题分析">问题分析
+</h2><p>本题的最优解法可以通过**哈夫曼树（Huffman Tree）**来实现。哈夫曼树是一种最优二叉树，常用于实现最小成本的编码。在本题中，哈夫曼树的应用将帮助我们最小化木头锯成若干段的总花费。</p>
+<h3 id="哈夫曼树原理">哈夫曼树原理
+</h3><p>哈夫曼树的构建思想是：每次选取两棵树中最小的两棵树进行合并。每次合并后的新树的权重是两个合并树的权重之和，直到只剩一棵树为止。</p>
+<p>对于本题，我们可以将每段木头的长度看作是哈夫曼树的叶子节点，而每次锯木头的操作就是合并最小的两段木头，合并后的花费等于这两段木头的总长度。</p>
+<h2 id="算法流程">算法流程
+</h2><ol>
+<li>将所有木头的长度看作哈夫曼树的叶子节点。</li>
+<li>使用优先队列（最小堆）来实现哈夫曼树的构建，优先队列每次从中取出最小的两段木头进行合并。</li>
+<li>每次合并时，记录合并的花费，并将新的木头段长度重新放入队列。</li>
+<li>最终，累积的总花费即为最少的锯木花费。</li>
+</ol>
+
 </section>
 
 

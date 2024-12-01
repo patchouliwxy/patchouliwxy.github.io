@@ -7,29 +7,133 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>patchouli</copyright>
-        <lastBuildDate>Sun, 01 Dec 2024 09:54:50 +0800</lastBuildDate><atom:link href="https://patchouli.blog/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 30 Nov 2024 09:54:50 +0800</lastBuildDate><atom:link href="https://patchouli.blog/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>数据结构课程设计预习任务A4_旅游规划问题</title>
         <link>https://patchouli.blog/p/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E9%A2%84%E4%B9%A0%E4%BB%BB%E5%8A%A1a4_%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92%E9%97%AE%E9%A2%98/</link>
-        <pubDate>Sun, 01 Dec 2024 09:54:50 +0800</pubDate>
+        <pubDate>Sat, 30 Nov 2024 09:54:50 +0800</pubDate>
         
         <guid>https://patchouli.blog/p/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E9%A2%84%E4%B9%A0%E4%BB%BB%E5%8A%A1a4_%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92%E9%97%AE%E9%A2%98/</guid>
-        <description></description>
+        <description>&lt;h1 id=&#34;问题&#34;&gt;问题
+&lt;/h1&gt;&lt;h2 id=&#34;题目描述pta数据结构与算法题目集7-9&#34;&gt;【题目描述】PTA(数据结构与算法题目集7-9)
+&lt;/h2&gt;&lt;p&gt;有了一张自驾旅游路线图，你会知道城市间的高速公路长度、以及该公路要收取的过路费。现在需要你写一个程序，帮助前来咨询的游客找一条出发地和目的地之间的最短路径。如果有若干条路径都是最短的，那么需要输出最便宜的一条路径。&lt;/p&gt;
+&lt;h3 id=&#34;输入格式&#34;&gt;输入格式
+&lt;/h3&gt;&lt;p&gt;输入数据的第 1 行给出 4 个正整数 &lt;code&gt;n&lt;/code&gt;、&lt;code&gt;m&lt;/code&gt;、&lt;code&gt;s&lt;/code&gt;、&lt;code&gt;d&lt;/code&gt;，其中：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;n&lt;/code&gt;（2 ≤ n ≤ 500）是城市的个数，城市的编号为 &lt;code&gt;0~(n−1)&lt;/code&gt;；&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;m&lt;/code&gt; 是高速公路的条数；&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;s&lt;/code&gt; 是出发地的城市编号；&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;d&lt;/code&gt; 是目的地的城市编号。&lt;/p&gt;
+&lt;p&gt;随后的 &lt;code&gt;m&lt;/code&gt; 行中，每行给出一条高速公路的信息，分别是：&lt;/p&gt;
+&lt;p&gt;城市 1、城市 2、高速公路长度、收费额，中间用空格分开，数字均为整数且不超过 500。&lt;/p&gt;
+&lt;p&gt;输入保证解的存在。&lt;/p&gt;
+&lt;h3 id=&#34;输出格式&#34;&gt;输出格式
+&lt;/h3&gt;&lt;p&gt;输出一行，包含两个整数：&lt;/p&gt;
+&lt;p&gt;最短路径的长度；&lt;/p&gt;
+&lt;p&gt;最短路径上收费的总额。 如果有若干条路径都是最短的，那么输出最便宜的一条路径。&lt;/p&gt;
+&lt;h3 id=&#34;heading&#34;&gt;
+&lt;/h3&gt;&lt;h1 id=&#34;解答&#34;&gt;解答
+&lt;/h1&gt;&lt;h2 id=&#34;问题分析&#34;&gt;问题分析
+&lt;/h2&gt;&lt;p&gt;这是一个典型的&lt;strong&gt;带权图&lt;/strong&gt;的最短路径问题，不仅要计算最短路径的长度，还要在多条最短路径中找到收费最少的路径。为了求解这个问题，可以使用&lt;strong&gt;Dijkstra算法&lt;/strong&gt;，并在计算过程中维护两个信息：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;最短路径&lt;/strong&gt;的长度。&lt;/p&gt;
+&lt;p&gt;在同样的最短路径长度下，维护&lt;strong&gt;最小的收费&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;算法流程&#34;&gt;算法流程
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;图的表示&lt;/strong&gt;：用邻接表或邻接矩阵表示城市和高速公路的信息。每条高速公路有两个权值：长度和收费。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Dijkstra算法&lt;/strong&gt;：使用Dijkstra算法计算从出发地 &lt;code&gt;s&lt;/code&gt; 到目的地 &lt;code&gt;d&lt;/code&gt; 的最短路径，同时对于每条最短路径，记录其收费情况。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;多源最短路径问题&lt;/strong&gt;：使用Dijkstra算法维护两个数组，一个是到各个城市的最短路径长度，另一个是对应的最小收费。每次更新时，如果发现更短的路径，就更新路径长度和收费。&lt;/p&gt;
+&lt;h3 id=&#34;dijkstra-算法步骤&#34;&gt;Dijkstra 算法步骤：
+&lt;/h3&gt;&lt;p&gt;初始化最短路径为无穷大，起点的最短路径为 0，起点的收费为 0。&lt;/p&gt;
+&lt;p&gt;使用优先队列（最小堆）来选择当前最短路径的节点，更新其相邻节点的路径和收费。&lt;/p&gt;
+&lt;p&gt;如果通过某条边可以达到目标节点且是更短的路径，则更新最短路径并且更新收费。如果路径长度相同，则选择收费较少的路径。&lt;/p&gt;
+&lt;h3 id=&#34;dijkstra算法的实现&#34;&gt;&lt;strong&gt;Dijkstra算法的实现&lt;/strong&gt;：
+&lt;/h3&gt;&lt;p&gt;使用最小堆（优先队列）来存储当前未处理的城市。每次弹出堆顶的城市，遍历它的邻接城市，更新其最短路径和最小收费。&lt;/p&gt;
+&lt;p&gt;如果发现通过某条道路到达目标城市 &lt;code&gt;d&lt;/code&gt; 的路径更短，或者路径长度相同但收费更少，就更新 &lt;code&gt;dist&lt;/code&gt; 和 &lt;code&gt;fee&lt;/code&gt;。&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>数据结构课程设计预习任务A3_PAT考试排名汇总</title>
         <link>https://patchouli.blog/p/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E9%A2%84%E4%B9%A0%E4%BB%BB%E5%8A%A1a3_pat%E8%80%83%E8%AF%95%E6%8E%92%E5%90%8D%E6%B1%87%E6%80%BB/</link>
-        <pubDate>Sun, 01 Dec 2024 09:54:14 +0800</pubDate>
+        <pubDate>Mon, 25 Nov 2024 09:54:14 +0800</pubDate>
         
         <guid>https://patchouli.blog/p/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E9%A2%84%E4%B9%A0%E4%BB%BB%E5%8A%A1a3_pat%E8%80%83%E8%AF%95%E6%8E%92%E5%90%8D%E6%B1%87%E6%80%BB/</guid>
-        <description></description>
+        <description>&lt;h1 id=&#34;题目&#34;&gt;题目
+&lt;/h1&gt;&lt;h2 id=&#34;题目描述pta数据结构与算法题目集7-41&#34;&gt;【题目描述】PTA(数据结构与算法题目集7-41)
+&lt;/h2&gt;&lt;p&gt;计算机程序设计能力考试（Programming Ability Test，简称PAT）旨在通过统一组织的在线考试及自动评测方法客观地评判考生的算法设计与程序设计实现能力，科学的评价计算机程序设计人才，为企业选拔人才提供参考标准。每次考试会在若干个不同的考点同时举行，每个考点用局域网，产生本考点的成绩。考试结束后，各个考点的成绩将即刻汇总成一张总的排名表。现在就请你写一个程序自动归并各个考点的成绩并生成总排名表。&lt;/p&gt;
+&lt;h3 id=&#34;输入格式&#34;&gt;输入格式
+&lt;/h3&gt;&lt;p&gt;输入的第一行给出一个正整数N（≤100），代表考点总数。随后给出N个考点的成绩，格式为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;首先一行给出正整数K（≤300），代表该考点的考生总数；&lt;/li&gt;
+&lt;li&gt;随后K行，每行给出1个考生的信息，包括考号（由13位整数字组成）和得分（为[0,100]区间内的整数），中间用空格分隔。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;输出格式&#34;&gt;输出格式
+&lt;/h3&gt;&lt;p&gt;首先在第一行里输出考生总数。随后输出汇总的排名表，每个考生的信息占一行，顺序为：考号、最终排名、考点编号、在该考点的排名。考点按输入给出的顺序从1到N编号。考生的输出须按最终排名的非递减顺序输出，获得相同分数的考生应有相同名次，并按考号的递增顺序输出。&lt;/p&gt;
+&lt;h3 id=&#34;heading&#34;&gt;
+&lt;/h3&gt;&lt;h1 id=&#34;解答&#34;&gt;解答
+&lt;/h1&gt;&lt;h2 id=&#34;问题分析&#34;&gt;问题分析
+&lt;/h2&gt;&lt;p&gt;我们需要将多个考点的成绩合并并根据最终得分进行排名。具体步骤如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;数据结构&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;使用一个列表存储每个考点的考生信息。每个考生的信息包括考号、得分、所在考点编号和在该考点的排名。&lt;/li&gt;
+&lt;li&gt;需要对考生进行排序：首先按得分降序排列，如果得分相同，则按考号升序排列。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;步骤&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;对每个考点，计算考点内的排名，并将所有考生的成绩和考点信息汇总。&lt;/li&gt;
+&lt;li&gt;计算所有考生的最终排名：根据所有考生的得分降序排序，如果得分相同，则按考号升序排序。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;最终输出&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;输出总考生数。&lt;/li&gt;
+&lt;li&gt;输出每个考生的考号、最终排名、所在考点编号和该考点的排名。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;算法流程&#34;&gt;算法流程
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;输入总的考点数 &lt;code&gt;N&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;对每个考点进行处理：
+&lt;ul&gt;
+&lt;li&gt;输入该考点的考生信息。&lt;/li&gt;
+&lt;li&gt;计算考点内的排名。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;汇总所有考生的信息，并按总分排序。&lt;/li&gt;
+&lt;li&gt;输出总排名表。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;用student 结构体用于存储每个考生的信息，包括考号、得分、考点排名、最终排名和考点编号。&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>数据结构课程设计预习任务A2_修理牧场</title>
         <link>https://patchouli.blog/p/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E9%A2%84%E4%B9%A0%E4%BB%BB%E5%8A%A1a2_%E4%BF%AE%E7%90%86%E7%89%A7%E5%9C%BA/</link>
-        <pubDate>Sun, 01 Dec 2024 09:53:30 +0800</pubDate>
+        <pubDate>Wed, 20 Nov 2024 09:53:30 +0800</pubDate>
         
         <guid>https://patchouli.blog/p/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E9%A2%84%E4%B9%A0%E4%BB%BB%E5%8A%A1a2_%E4%BF%AE%E7%90%86%E7%89%A7%E5%9C%BA/</guid>
-        <description></description>
+        <description>&lt;h1 id=&#34;最少锯木花费问题&#34;&gt;最少锯木花费问题
+&lt;/h1&gt;&lt;h2 id=&#34;题目描述pta数据结构与算法题目集7-29&#34;&gt;【题目描述】PTA(数据结构与算法题目集7-29)
+&lt;/h2&gt;&lt;p&gt;农夫要修理牧场的一段栅栏，他测量了栅栏，发现需要N块木头，每块木头长度为整数Li个长度单位，于是他购买了一条很长的、能锯成N块的木头，即该木头的长度是Li的总和。
+但是农夫自己没有锯子，请人锯木的酬金跟这段木头的长度成正比。为简单起见，不妨就设酬金等于所锯木头的长度。例如，要将长度为20的木头锯成长度为8、7和5的三段，第一次锯木头花费20，将木头锯成12和8；第二次锯木头花费12，将长度为12的木头锯成7和5，总花费为32。如果第一次将木头锯成15和5，则第二次锯木头花费15，总花费为35（大于32）。
+请编写程序帮助农夫计算将木头锯成N块的最少花费。&lt;/p&gt;
+&lt;h2 id=&#34;输入格式&#34;&gt;【输入格式】
+&lt;/h2&gt;&lt;p&gt;输入首先给出正整数N（≤10^4），表示要将木头锯成N块。第二行给出N个正整数（≤50），表示每段木块的长度。&lt;/p&gt;
+&lt;h2 id=&#34;输出格式&#34;&gt;【输出格式】
+&lt;/h2&gt;&lt;p&gt;输出1个整数，即将木头锯成N块的最少花费。&lt;/p&gt;
+&lt;h2 id=&#34;heading&#34;&gt;
+&lt;/h2&gt;&lt;h1 id=&#34;解答&#34;&gt;解答
+&lt;/h1&gt;&lt;h2 id=&#34;问题分析&#34;&gt;问题分析
+&lt;/h2&gt;&lt;p&gt;本题的最优解法可以通过**哈夫曼树（Huffman Tree）**来实现。哈夫曼树是一种最优二叉树，常用于实现最小成本的编码。在本题中，哈夫曼树的应用将帮助我们最小化木头锯成若干段的总花费。&lt;/p&gt;
+&lt;h3 id=&#34;哈夫曼树原理&#34;&gt;哈夫曼树原理
+&lt;/h3&gt;&lt;p&gt;哈夫曼树的构建思想是：每次选取两棵树中最小的两棵树进行合并。每次合并后的新树的权重是两个合并树的权重之和，直到只剩一棵树为止。&lt;/p&gt;
+&lt;p&gt;对于本题，我们可以将每段木头的长度看作是哈夫曼树的叶子节点，而每次锯木头的操作就是合并最小的两段木头，合并后的花费等于这两段木头的总长度。&lt;/p&gt;
+&lt;h2 id=&#34;算法流程&#34;&gt;算法流程
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;将所有木头的长度看作哈夫曼树的叶子节点。&lt;/li&gt;
+&lt;li&gt;使用优先队列（最小堆）来实现哈夫曼树的构建，优先队列每次从中取出最小的两段木头进行合并。&lt;/li&gt;
+&lt;li&gt;每次合并时，记录合并的花费，并将新的木头段长度重新放入队列。&lt;/li&gt;
+&lt;li&gt;最终，累积的总花费即为最少的锯木花费。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
         </item>
         <item>
         <title>数据结构课程设计预习任务A1_表达式转换</title>
