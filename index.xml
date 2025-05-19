@@ -24,13 +24,13 @@
 &lt;h4 id=&#34;功能描述&#34;&gt;功能描述：
 &lt;/h4&gt;&lt;h5 id=&#34;1基础信息管理模块&#34;&gt;1.基础信息管理模块
 &lt;/h5&gt;&lt;p&gt;1.1歌曲管理：
-添加、修改、删除歌曲信息，包括歌曲名称、难度等级、谱面定数、版本、分类（如流行、动漫、VOCALOID）。
+添加、修改、删除歌曲信息，包括歌曲名称、难度等级、谱面定数、版本、分类（如原创、动漫、VOCALOID）。
 支持批量导入新版本歌曲数据。
 1.2玩家管理：
 维护玩家账号信息，包括注册、登录、个人信息修改（如用户名、邮箱）。
 支持绑定游戏ID（如微信账号）以同步成绩。
 1.3评分规则管理：
-设置不同难度下的评分标准（如SSS需达成率≥100.5%）。
+设置不同难度下的评分标准（如SSS需达成率≥100.0%）。
 管理DX Rating计算规则，确保与游戏版本一致。&lt;/p&gt;
 &lt;h5 id=&#34;2成绩记录模块&#34;&gt;2.成绩记录模块
 &lt;/h5&gt;&lt;p&gt;2.1成绩查询：
@@ -66,6 +66,26 @@
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/patchouliwxy/patchouliwxy.github.io/master/images/2.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/patchouliwxy/patchouliwxy.github.io/master/images/3.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;3&#34;
 	
 	
 &gt;&lt;/p&gt;
