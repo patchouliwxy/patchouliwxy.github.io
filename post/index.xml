@@ -162,6 +162,21 @@
 	
 	
 &gt;&lt;/p&gt;
+&lt;h3 id=&#34;e-r图&#34;&gt;E-R图
+&lt;/h3&gt;&lt;p&gt;本系统的实体关系图如下图所示。存在：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;用户与成绩&lt;/strong&gt;：一对多关系。一个用户可以有多条成绩记录。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;乐曲与谱面&lt;/strong&gt;：一对多关系。一个乐曲可以有多个不同难度的谱面。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;用户与收藏夹&lt;/strong&gt;：一对多关系。一个用户可以收藏多首乐曲。等关系&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/patchouliwxy/patchouliwxy.github.io/master/images/6.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;6&#34;
+	
+	
+&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
