@@ -150,6 +150,18 @@
 	
 	
 &gt;&lt;/p&gt;
+&lt;h3 id=&#34;图形用户界面&#34;&gt;图形用户界面
+&lt;/h3&gt;&lt;p&gt;为方便用户进行操作，本项目运用了pyqt制作了gui界面，基本界面如下图所示，包括乐曲查询界面，收藏夹和成绩查询界面，还有登录界面，本项目可以通过查分器的token进行登录操作，届时可将获取到查分器的数据并同步到成绩查询页面&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/patchouliwxy/patchouliwxy.github.io/master/images/5.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;5&#34;
+	
+	
+&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
